@@ -1,3 +1,3 @@
 # kuliah_crud1
-By_Misbach
-DETAIL.php is not yet finished
+By_Misbach          |           
+detail.php is not yet finished

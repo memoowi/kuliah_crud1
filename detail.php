@@ -23,7 +23,7 @@ if ($_GET['article_id']) {
     <?php
     while($dt = mysqli_fetch_array($data)){
     ?>
-    <form>
+    <form action="" method="POST">
         <input type="hidden" name="article_id" value="<?php echo $dt['article_id']; ?>">
         <label for="user_id">Writer :</label><br>
         <select name="user_id" id="user_id" required>
@@ -50,17 +50,17 @@ if ($_GET['article_id']) {
         <label for="content">Content :</label><br>
         <textarea name="content" rows="5"><?php echo $dt['content']; ?></textarea>
         <br>
-        <button onclick="goback()">Back</button>
     </form>
+    <!-- Button below doesnt work if u put it inside form element  -->
+    <button onclick="goBack()">Back</button> 
     <?php
     }
     ?>
-
-
-</body>
+    
 <script>
-    function goback(){
+    function goBack(){
         window.history.back();
     }
 </script>
+</body>
 </html>
