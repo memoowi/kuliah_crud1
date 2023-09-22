@@ -26,12 +26,12 @@ if ($_GET['article_id']) {
     <form>
         <input type="hidden" name="article_id" value="<?php echo $dt['article_id']; ?>">
         <label for="user_id">Writer :</label><br>
-        <select name="user_id" id="user_id" required disabled>
+        <select name="user_id" id="user_id" required>
             <?php
                 if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_assoc($result)){  
                     $selected = ($row['user_id'] == $dt['user_id']) ? 'selected' : '';
-            ?>
+            ?>  
             <option <?php echo $selected ?> value="<?php echo $row['user_id']; ?>">
                 <?php echo $row['name']; ?>
             </option>
@@ -42,13 +42,13 @@ if ($_GET['article_id']) {
         </select>
         <br>
         <label for="title">Title :</label><br>
-        <input type="text" name="title" value="<?php echo $dt['title']; ?>" readonly>
+        <input type="text" name="title" value="<?php echo $dt['title']; ?>">
         <br>
         <label for="publication_date">Date :</label><br>
-        <input type="date" name="publication_date" value="<?php echo $dt['publication_date']; ?>" readonly>
+        <input type="date" name="publication_date" value="<?php echo $dt['publication_date']; ?>">
         <br>
         <label for="content">Content :</label><br>
-        <textarea name="content" rows="5" readonly><?php echo $dt['content']; ?></textarea>
+        <textarea name="content" rows="5"><?php echo $dt['content']; ?></textarea>
         <br>
         <button onclick="goback()">Back</button>
     </form>
@@ -56,10 +56,11 @@ if ($_GET['article_id']) {
     }
     ?>
 
-    <script>
-        function gobak() {
-            window.history.back();
-        }
-    </script>
+
 </body>
+<script>
+    function goback(){
+        window.history.back();
+    }
+</script>
 </html>
