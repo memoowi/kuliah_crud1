@@ -44,9 +44,6 @@ if ($_GET['article_id']) {
         <label for="title">Title :</label><br>
         <input type="text" name="title" value="<?php echo $dt['title']; ?>">
         <br>
-        <label for="publication_date">Date :</label><br>
-        <input type="date" name="publication_date" value="<?php echo $dt['publication_date']; ?>">
-        <br>
         <label for="content">Content :</label><br>
         <textarea name="content" rows="5"><?php echo $dt['content']; ?></textarea>
         <br>

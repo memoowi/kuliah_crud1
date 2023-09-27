@@ -32,9 +32,6 @@ $result = mysqli_query($koneksi,$query);
         <label for="title">Title :</label><br>
         <input type="text" name="title">
         <br>
-        <label for="publication_date">Date :</label><br>
-        <input type="date" name="publication_date">
-        <br>
         <label for="content">Content :</label><br>
         <textarea name="content" rows="5"></textarea>
         <br>

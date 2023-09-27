@@ -9,13 +9,14 @@ $query = "SELECT * FROM article";
 $result = mysqli_query($koneksi,$query);
 
 // EXPERIMENT
-$query2 = "SELECT users.name from users INNER JOIN article ON users.user_id = artcle.user_id";
+$query2 = "SELECT users.name from users INNER JOIN article ON users.user_id = article.user_id";
 $result2 = mysqli_query($koneksi,$query);
 $dt = mysqli_fetch_assoc($result2);
 // End of EXPERIMENT
 
 ?>
 
+<!-- disii -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
