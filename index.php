@@ -5,14 +5,8 @@ if(!$koneksi){
     die('kesalahan koneksi : ' .mysqli_connect_error());
 }
 
-$query = "SELECT * FROM article";
+$query = "SELECT * FROM article INNER JOIN users ON article.user_id = users.user_id ORDER BY article_id";
 $result = mysqli_query($koneksi,$query);
-
-// EXPERIMENT
-$query2 = "SELECT users.name from users INNER JOIN article ON users.user_id = article.user_id";
-$result2 = mysqli_query($koneksi,$query);
-$dt = mysqli_fetch_assoc($result2);
-// End of EXPERIMENT
 
 ?>
 
@@ -41,7 +35,7 @@ $dt = mysqli_fetch_assoc($result2);
         ?>
         <tr>
             <td><?php echo $row['article_id']; ?></td>
-            <td><?php echo $row['user_id']; ?></td>
+            <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['title']; ?></td>
             <td>
                 <button onclick="detail('<?php echo $row['article_id']; ?>')">Detail</button>
