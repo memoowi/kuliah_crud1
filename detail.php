@@ -23,7 +23,7 @@ if ($_GET['article_id']) {
     <?php
     while($dt = mysqli_fetch_array($data)){
     ?>
-    <form action="" method="POST">
+    <form>
         <input type="hidden" name="article_id" value="<?php echo $dt['article_id']; ?>">
         <label for="user_id">Writer :</label><br>
         <select name="user_id" id="user_id" required disabled>
